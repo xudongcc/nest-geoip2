@@ -1,6 +1,6 @@
 {
   "name": "nest-geoip2",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "keywords": [
     "nest",
@@ -13,7 +13,7 @@
     "email": "me@xudong.dev",
     "url": "https://www.xudong.dev/"
   },
-  "bugs": "https://github.com/owner/project/issues",
+  "bugs": "https://github.com/xudong-dev/nest-geoip2/issues",
   "homepage": "https://github.com/xudong-dev/nest-geoip2#readme",
   "repository": {
     "type": "git",
