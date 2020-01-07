@@ -1,7 +1,7 @@
 {
   "name": "nest-geoip2",
   "version": "1.0.3",
-  "description": "MaxMind GeoIP2 module for Nest framework",
+  "description": "MaxMind GeoIP2 module for Nest framework.",
   "keywords": [
     "nest",
     "nestjs",
