@@ -1,5 +1,7 @@
 # nest-geoip2
 
+> MaxMind GeoIP2 module for Nest framework
+
 ## Install
 
 ```javascript
