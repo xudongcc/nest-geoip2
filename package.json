@@ -1,6 +1,6 @@
 {
   "name": "nest-geoip2",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MaxMind GeoIP2 module for Nest framework.",
   "keywords": [
     "nest",
@@ -13,11 +13,11 @@
     "email": "me@xudong.dev",
     "url": "https://www.xudong.dev/"
   },
-  "bugs": "https://github.com/xudong-dev/nest-geoip2/issues",
-  "homepage": "https://github.com/xudong-dev/nest-geoip2#readme",
+  "bugs": "https://github.com/xudongdev/nest-geoip2/issues",
+  "homepage": "https://github.com/xudongdev/nest-geoip2#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xudong-dev/nest-geoip2.git"
+    "url": "https://github.com/xudongdev/nest-geoip2.git"
   },
   "license": "MIT",
   "main": "dist/index.js",
