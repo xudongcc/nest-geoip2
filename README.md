@@ -1,6 +1,6 @@
 # nest-geoip2
 
-![Build Status](https://img.shields.io/github/workflow/status/xudongdev/nest-geoip2/Node.js%20CI)
+[![Build Status](https://img.shields.io/github/workflow/status/xudongdev/nest-geoip2/Node.js%20CI)](https://github.com/xudongdev/nest-geoip2/actions?query=workflow%3A%22Node.js+CI%22)
 [![Coverage Status](https://img.shields.io/codecov/c/github/xudongdev/nest-geoip2)](https://codecov.io/github/xudongdev/nest-geoip2)
 [![License](https://img.shields.io/npm/l/nest-geoip2)](https://www.npmjs.com/package/nest-geoip2)
 [![Version](https://img.shields.io/npm/v/nest-geoip2)](https://www.npmjs.com/package/nest-geoip2)
