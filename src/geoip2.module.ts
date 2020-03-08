@@ -1,21 +1,17 @@
 import { Reader, WebServiceClient } from "@maxmind/geoip2-node";
 import ReaderModel from "@maxmind/geoip2-node/dist/src/readerModel";
 import { DynamicModule, Global, Module } from "@nestjs/common";
-import { OpenOpts } from "maxmind";
 
 @Global()
 @Module({})
 export class GeoIP2Module {
   public static registerWebServiceClient(
-    accountID: string,
-    licenseKey: string,
-    timeout?: number
+    ...args: ConstructorParameters<typeof WebServiceClient>
   ): DynamicModule {
     const providers = [
       {
         provide: WebServiceClient,
-        useFactory: (): WebServiceClient =>
-          new WebServiceClient(accountID, licenseKey, timeout)
+        useFactory: (): WebServiceClient => new WebServiceClient(...args)
       }
     ];
 
@@ -26,11 +22,13 @@ export class GeoIP2Module {
     };
   }
 
-  public static registerReader(file: string, opts?: OpenOpts): DynamicModule {
+  public static registerReader(
+    ...args: Parameters<typeof Reader.open>
+  ): DynamicModule {
     const providers = [
       {
         provide: ReaderModel,
-        useFactory: (): Promise<ReaderModel> => Reader.open(file, opts)
+        useFactory: (): Promise<ReaderModel> => Reader.open(...args)
       }
     ];
 
