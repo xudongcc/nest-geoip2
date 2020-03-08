@@ -17,27 +17,13 @@ yarn add nest-geoip2 @maxmind/geoip2-node
 
 ## Usage
 
-```javascript
-import { Controller, Get, Ip } from "@nestjs/common";
-import { ReaderModel } from "nest-geoip2";
-
-@Controller()
-export class AppController {
-  public constructor(private readonly readerModel: ReaderModel) {
-    return this;
-  }
-
-  @Get("geoip")
-  public async create(@Ip() ip: string) {
-    return this.readerModel.city(ip);
-  }
-}
-```
-
-```javascript
+```typescript
+// app.module.ts
 import { Module } from "@nestjs/common";
 import { GeoIP2Module } from "nest-geoip2";
 import { join } from "path";
+
+import { AppController } from "./app.controller.ts";
 
 @Module({
   imports: [
@@ -47,3 +33,27 @@ import { join } from "path";
 })
 export class AppModule {}
 ```
+
+```typescript
+// app.controller.ts
+import { Controller, Get, Ip } from "@nestjs/common";
+import { ReaderModel } from "nest-geoip2";
+
+@Controller()
+export class AppController {
+  public constructor(private readonly readerModel: ReaderModel) {
+    return this;
+  }
+
+  @Get("ip")
+  public async ip(@Ip() ip: string) {
+    return this.readerModel.city(ip);
+  }
+}
+```
+
+## Other
+
+How to get GeoIP2/GeoLite2 database?
+[https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads](https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads)
+[https://www.maxmind.com/en/accounts/current/geoip/downloads](https://www.maxmind.com/en/accounts/current/geoip/downloads)
