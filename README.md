@@ -54,6 +54,6 @@ export class AppController {
 
 ## Other
 
-How to get GeoIP2/GeoLite2 database?
-[https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads](https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads)
+How to get GeoIP2/GeoLite2 database?  
+[https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads](https://dev.maxmind.com/geoip/geoipupdate/#Direct_Downloads)  
 [https://www.maxmind.com/en/accounts/current/geoip/downloads](https://www.maxmind.com/en/accounts/current/geoip/downloads)
