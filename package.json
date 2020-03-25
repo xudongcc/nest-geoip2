@@ -32,34 +32,54 @@
   },
   "peerDependencies": {
     "@maxmind/geoip2-node": "^1.0.0",
-    "@nestjs/common": "^6.0.0",
-    "@nestjs/core": "^6.0.0",
+    "@nestjs/common": "^6.0.0 || ^7.0.0",
+    "@nestjs/core": "^6.0.0 || ^7.0.0",
     "reflect-metadata": "^0.0.0"
   },
   "devDependencies": {
     "@maxmind/geoip2-node": "^1.4.0",
-    "@nestjs/cli": "^7.0.0",
-    "@nestjs/common": "^6.11.11",
-    "@nestjs/core": "^6.11.11",
-    "@nestjs/testing": "^7.0.0",
+    "@nestjs/cli": "^7.0.2",
+    "@nestjs/common": "^7.0.5",
+    "@nestjs/core": "^7.0.5",
+    "@nestjs/testing": "^7.0.5",
     "@types/jest": "^25.1.4",
     "@types/node": "^13.9.0",
-    "@typescript-eslint/eslint-plugin": "^2.22.0",
-    "@typescript-eslint/parser": "^2.22.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-simple-import-sort": "^5.0.1",
+    "husky": "^4.2.3",
     "jest": "^25.1.0",
-    "prettier": "^2.0.0",
+    "lint-staged": "^10.0.9",
+    "prettier": "^2.0.2",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.4",
+    "semantic-release": "^17.0.4",
     "ts-jest": "^25.2.1",
-    "typescript": "^3.8.3",
-    "semantic-release": "^17.0.4"
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.{json,js,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,ts}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "jest": {
     "moduleFileExtensions": [
@@ -116,5 +136,10 @@
         }
       ]
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
